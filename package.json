@@ -21,6 +21,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.1.0",
+    "gulp-uglifycss": "^1.0.6",
     "gulp-util": "^3.0.8",
     "multipipe": "^1.0.2"
   }

@@ -10,6 +10,7 @@ const newer = require('gulp-newer');
 const notify = require('gulp-notify');
 const multipipe = require('multipipe');
 const uglify = require('gulp-uglify');
+const uglifycss = require('gulp-uglifycss');
 const ftp = require('gulp-ftp');
 const gutil = require('gulp-util');
 const browserSync = require('browser-sync').create();
@@ -20,33 +21,42 @@ gulp.task('clean', function() {
   return del(['public/**','!public']);
 });
 
-gulp.task('scripts', function() {
-  return gulp.src('frontend/js/*.*')
+gulp.task('libsjs', function() {
+  return gulp.src('frontend/scripts/*.*','!common.js')
+      .pipe(concat('libs.js'))
       .pipe(uglify())
       .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('styles', function(file) {
+gulp.task('commonjs', function() {
+  return gulp.src('frontend/scripts/common.js')
+      .pipe(uglify())
+      .pipe(gulp.dest('public/js'));
+});
+
+gulp.task('libscss', function(file) {
+  return gulp.src('frontend/styles/*.css')
+      .pipe(sourcemaps.init())
+      .pipe(concat('libs.min.css'))
+      .pipe(uglifycss())
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('allcss', function(file) {
   return multipipe(
-      gulp.src('frontend/styles/*.*'),
-      debug({title :'src-deb'}),
+      gulp.src('frontend/styles/style.less'),
       sourcemaps.init(),
-      debug({title :'sourmapinit-deb'}),
-      //gulpif(file.extname == 'less', less()),
-      gulpif(true, less()),
-      debug({title :'gulpifless-deb'}),
-      concat('all.css'),
-      debug({title :'concat-deb'}),
+      less(),
       sourcemaps.write(),
-      debug({title :'sourmapwrite-deb'}),
       gulp.dest('public/css')
   ).on('error', notify.onError());
 });
 
+
 gulp.task('assets', function() {
   return gulp.src('frontend/assets/**', {since: gulp.lastRun('assets')})
       .pipe(newer('public'))
-      .pipe(debug({title: 'assets'}))
       .pipe(gulp.dest('public'));
 });
 
@@ -54,9 +64,9 @@ gulp.task('assets', function() {
 // );
 
 gulp.task('watch', function() {
-  gulp.watch('frontend/styles/*.less', gulp.series('styles'));
+  gulp.watch('frontend/styles/*.less', gulp.series('allcss'));
   gulp.watch('frontend/assets/**/*.*', gulp.series('assets'));
-  gulp.watch('frontend/js/*.js', gulp.series('scripts'));
+  gulp.watch('frontend/js/common.js', gulp.series('commonjs'));
 //  gulp.watch('public/**/*.*', gulp.series('ftp'));
 });
 
@@ -69,20 +79,20 @@ gulp.task('serve', function() {
 
 gulp.task('build', gulp.series(
     'clean',
-    gulp.parallel('assets','styles', 'scripts'))
+    gulp.parallel('assets','libscss', 'allcss', 'libsjs', 'commonjs'))
 );
 
 gulp.task('dev',
     gulp.series('build', gulp.parallel('watch', 'serve'))
 );
 
-gulp.task('ftp', function() {
-  return gulp.src('public/**/*.*')
-      .pipe(ftp({
-          host: 'lugovc.beget.tech',
-          user: 'lugovc_todolist',
-          pass: '9I%50}}*'
-        }))
-      .pipe(debug({title: 'to-ftp'}))
-      .pipe(gutil.noop());
-});
+// gulp.task('ftp', function() {
+//   return gulp.src('public/**/*.*')
+//       .pipe(ftp({
+//           host: 'lugovc.beget.tech',
+//           user: 'lugovc_todolist',
+//           pass: '9I%50}}*'
+//         }))
+//       .pipe(debug({title: 'to-ftp'}))
+//       .pipe(gutil.noop());
+// });
