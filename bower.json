@@ -1,0 +1,22 @@
+{
+  "name": "LP",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Andrew <lugovcev@inbox.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lugovtsev/LP",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "frontend/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^4.0.0"
+  }
+}
