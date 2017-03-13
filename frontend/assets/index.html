@@ -2,47 +2,8 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Заголовок</title>
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=cyrillic' rel='stylesheet' type='text/css'>
-<!-- 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/colorbox.css">
-	<link rel="stylesheet" href="css/slick.css"> -->
-	<link rel="stylesheet" href="css/libs.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<!-- Две нижние строчки убрать на production после компиляции style.css из less
-	и добавить строчку <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet/less" type="text/css" href="css/style.less">-->
-</head>
-<body>
-
-	<header id="header">
-
-
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-3">
-					<a href="#header">
-						<img src="images/logotype.png" alt="">
-					</a>
-				</div>
-				<div class="col-xs-7">
-						<ul id="menu">
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-						</ul>
-				</div>
-				<div class="header__contacts col-xs-2">
-					<a class="all-modal-but modal-but" data-target="#modal-callback" data-toggle="modal" href="">
-						Заказать звонок
-					</a>
-				</div>
-			</div>
-		</div>
-	</header>
+	<title>Главная</title>
+	//= template/header.html
 
 
 <!-- ПЕРВЫЙ ЭКРАН -->
@@ -300,52 +261,4 @@
 
 
 <!-- ФУТЕР -->
-
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="footer__logo col-xs-12">
-					<a href="#header"><img src="images/logotype.png" alt=""></a>
-				</div>
-			</div>
-		</div>
-		<div class="footer__sign">
-				Сделано в <a href="http://t-stark.ru" target="_blank" rel="nofollow">T-Stark
-			</a>
-		</div>
-	</footer>
-
-	<!--Начало формы для отправки заявки -->
-	<div class="modal fade" id="modal-callback" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-		  <div class="modal-content">
-		    <div class="modal-header">
-					<h3>Оставьте заявку</h3>
-					<p>и наш оператор свяжется с Вами</p>
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-		    </div>
-		    <div class="modal-body">
-					<form action="php/post.php" method="post">
-						<input name="name" class="modal-input name-input" type="text" placeholder="Имя*">
-						<input name="phone" class="modal-input phone-input" type="text" placeholder="Телефон*">
-						<input name="surname" type="text" class="promo__input surname-input" placeholder="Фамилия*">
-						<input type="hidden" name="location" value="Модальное окно">
-						<button type="submit" class="button modal-submit">
-						Отправить
-						</button>
-					</form>
-			  </div>
-		  </div>
-		</div>
-	</div>
-	<!--Конец формы для отправки заявки -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- 	<script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
-	<script type="text/javascript" src="js/slick.min.js"></script> -->
-	<script type="text/javascript" src="js/libs.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
-
-</body>
-</html>
+//= template/footer.html

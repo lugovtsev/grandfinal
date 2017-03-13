@@ -13,6 +13,7 @@ const uglify = require('gulp-uglify');
 const uglifycss = require('gulp-uglifycss');
 const ftp = require('gulp-ftp');
 const gutil = require('gulp-util');
+const rigger = require('gulp-rigger');
 const browserSync = require('browser-sync').create();
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
@@ -53,9 +54,14 @@ gulp.task('allcss', function(file) {
   ).on('error', notify.onError());
 });
 
+gulp.task('html', function() {
+  return gulp.src('frontend/assets/*.html')
+      .pipe(rigger())
+      .pipe(gulp.dest('public'));
+});
 
 gulp.task('assets', function() {
-  return gulp.src('frontend/assets/**', {since: gulp.lastRun('assets')})
+  return gulp.src('frontend/assets/images', {since: gulp.lastRun('assets')})
       .pipe(newer('public'))
       .pipe(gulp.dest('public'));
 });
@@ -64,6 +70,7 @@ gulp.task('assets', function() {
 // );
 
 gulp.task('watch', function() {
+  gulp.watch('frontend/assets/**/*.html', gulp.series('html'));
   gulp.watch('frontend/styles/*.less', gulp.series('allcss'));
   gulp.watch('frontend/assets/**/*.*', gulp.series('assets'));
   gulp.watch('frontend/js/common.js', gulp.series('commonjs'));
@@ -79,7 +86,7 @@ gulp.task('serve', function() {
 
 gulp.task('build', gulp.series(
     'clean',
-    gulp.parallel('assets','libscss', 'allcss', 'libsjs', 'commonjs'))
+    gulp.parallel('html','assets','libscss', 'allcss', 'libsjs', 'commonjs'))
 );
 
 gulp.task('dev',
