@@ -14,9 +14,22 @@ const uglifycss = require('gulp-uglifycss');
 const ftp = require('gulp-ftp');
 const gutil = require('gulp-util');
 const rigger = require('gulp-rigger');
+const mainBowerFiles = require('main-bower-files');
 const browserSync = require('browser-sync').create();
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+
+gulp.task('bowerjs', function() {
+    return gulp.src(mainBowerFiles('**/*.js'))
+        .pipe(gulp.dest('public/js'))
+});
+
+gulp.task('bowercss', function() {
+    return gulp.src(mainBowerFiles('**/*.scss'))
+        .pipe(gulp.dest('public/css'))
+});
+
+gulp.task('bowermain', gulp.parallel('bowerjs', 'bowercss'));
 
 gulp.task('clean', function() {
   return del(['public/**','!public']);
