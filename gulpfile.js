@@ -21,6 +21,7 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'developm
 
 gulp.task('bowerjs', function() {
     return gulp.src(mainBowerFiles('**/*.js'))
+        .pipe(debug({"title": "mainBowerJS"}))
         .pipe(gulp.dest('public/js'))
 });
 

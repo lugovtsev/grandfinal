@@ -1,8 +1,5 @@
 $(document).ready(function() {
 
-
-/*code here*/
-
 /* Прокрутка вверх
 
 $('#totop').click(function()
