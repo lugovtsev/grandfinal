@@ -12,7 +12,6 @@
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.1.0",
     "gulp-ftp": "^1.1.0",
     "gulp-if": "^2.0.2",
@@ -22,9 +21,7 @@
     "gulp-rigger": "^0.5.8",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.1.0",
-    "gulp-uglifycss": "^1.0.6",
     "gulp-util": "^3.0.8",
-    "main-bower-files": "^2.13.1",
     "multipipe": "^1.0.2"
   }
 }
