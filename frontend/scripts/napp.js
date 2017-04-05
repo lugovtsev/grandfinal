@@ -1,6 +1,94 @@
 $(document).ready(function() {
 
-/* Прокрутка вверх
+/*collapse FAQ*/
+$('.collapse-link').click(function() {
+	if ($(this).hasClass('opened')) {
+		$(this).removeClass('opened');
+		$(this).siblings('.collapse-content').slideUp(300);
+	}
+	else {
+		$('.collapse-link').removeClass('opened');
+		$('.collapse-content').slideUp(300);
+		$(this).addClass('opened');
+		$(this).siblings('.collapse-content').slideDown(300);
+	}
+});
+
+if ($(document).width() < 1200)
+{
+	/*show mob menu*/
+	$('#burger').click(function() {
+		$('#menu-box').animate({
+			left: 0
+		},
+		200,
+		function() {
+			$('.left-menu-overlay').fadeIn(200);
+			$('body').css('overflow','hidden');
+		});
+	});
+
+	$('.left-menu-overlay').click(function() {
+		$('.left-menu-overlay').fadeOut();
+		$("#menu-box").animate({
+			left: "-100%"
+		},
+		200,
+		function() {
+			$('body').css('overflow','auto');
+		});
+
+	});
+	$('.open-sub-menu').click(function() {
+		$(this).toggleClass('opened');
+		$(this).siblings('ul').slideToggle(200);
+	});
+}
+
+if ($(document).width() >= 1200)
+{
+	/*шапка*/
+	$('.head2').scroolly([
+		{
+			from: 'doc-top',
+			to: 'con-bottom = vp-top',
+			css: {position: 'static'},
+			removeClass: 'head2--fixed'
+		},
+		{
+			from: 'con-bottom = vp-top',
+			css: {position: 'fixed',top: 0},
+			addClass: 'head2--fixed'
+		}
+	], $('.head1'));
+	/*sidebar в услугах*/
+	$('.sidebar').scroolly([
+		{
+			from: 'doc-top',
+			to: 'con-bottom = vp-top + 100px',
+			removeClass: 'sidebar-fixed'
+		},
+		{
+			from: 'con-bottom = vp-top + 100px',
+			addClass: 'sidebar-fixed'
+		}
+	], $('.services-menu'));
+}
+
+/*для добавления файла*/
+$('#add_file').click(function(){
+   $("#attached_file").click();
+})
+
+$("#attached_file").change(function(){
+	if (this.value != "")
+  	$('#add_file').text(this.value.replace(/C:\\fakepath\\/i, ''));
+	else {
+		$('#add_file').text("Прикрепить файл");
+	}
+})
+
+/* Прокрутка вверх */
 
 $('#totop').click(function()
 {
@@ -8,7 +96,7 @@ $('#totop').click(function()
         scrollTop: 0
     }, 500);
 });
-*/
+
 
 /* Плавная прокрутка меню
 

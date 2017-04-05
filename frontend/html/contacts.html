@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Контакты</title>
+	//= template/header.html
+
+  <section class="map__contacts">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumbs"><a href="/">Главная</a>&nbsp;&nbsp;›&nbsp;&nbsp;Контакты</div>
+          <h1>Контакты</h1>
+          <div class="map-box">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6de26213d32869fb6cc27f5f85299252b733a7571be5801032d071bd33665f78&amp;width=100%25&amp;height=370&amp;lang=ru_RU&amp;scroll=true"></script>
+            <div class="contacts-box">
+              <p>+7 495 777 28 83</p>
+              <p>8 800 100 28 83</p>
+              <p>info@cargoes.biz</p>
+              <p>Москва Рязанский пр-т д.16 стр.4 офис 34.</p>
+              <p>ПН - ПТ 10:00 - 19:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contacts__form">
+    <div class="container">
+      <div class="row">
+        <h2>Напишите нам и мы свяжемся с Вами в ближайшее время!</h2>
+        <div class="col-12">
+          <form class="application__form" action="php/post.php" method="post">
+						<div class="row contacts__form-inputs">
+							<div class="col-12 col-sm-6">
+								<input name="name" type="text" class="name-input" placeholder="Имя*">
+							</div>
+							<div class="col-12 col-sm-6">
+								<input name="email" type="text" class="email-input" placeholder="Email*">
+							</div>
+							<div class="col-12 col-sm-6">
+								<input name="from" type="text" placeholder="Откуда">
+							</div>
+							<div class="col-12 col-sm-6">
+								<input name="destination" type="text" placeholder="Куда">
+							</div>
+						</div>
+						<textarea name="message" placeholder="Сообщение*"></textarea>
+					<input type="hidden" name="location" value="Блок напишите нам">
+					<button class="but-yellow" type="submit">Отправить</button>
+					</form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+	//= template/footer.html

@@ -4,261 +4,426 @@
 	<meta charset="UTF-8">
 	<title>Главная</title>
 	//= template/header.html
-
-
-<!-- ПЕРВЫЙ ЭКРАН -->
-	<section class="promo" id="promo">
+	<section class="promo">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<h1 class="promo__title">Заголовок</h1>
-					<p class="promo__description description">
-						Оставьте заявку, Мы свяжемся с вами!
-				</p>
-					<form class="promo__form" action="php/post.php" method="post">
-						<input name="name" type="text" class="promo__input name-input" placeholder="Имя*">
-						<input name="phone" type="text" class="promo__input phone-input" placeholder="Телефон*">
-						<input name="surname" type="text" class="promo__input surname-input" placeholder="Фамилия*">
-						<input type="hidden" name="location" value="Проконсультироваться">
-						<button type="submit" class="button promo__submit">Проконсультироваться</button>
+				<div class="col-12">
+					<h1>Международные грузоперевозки и таможенное оформление</h1>
+					<p class="promo__description">
+						Профессионально и быстро доставим и оформим Ваш груз из любой точки мира.
+          </p>
+          <a class="all-modal-but modal-but but-yellow" data-target="#modal-callback" data-toggle="modal" href="">
+	          Заказать
+	        </a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="services">
+			<div class="container">
+        <h2>Наши услуги</h2>
+				<div class="row">
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="service">
+              <div class="service__img hidden-sm-down">
+								<a href=""><div class="img-overlay"></div></a>
+                <img src="images/pic-1.png" alt="">
+              </div>
+              <a href="" class="service__desc-title">Морские перевозки</a>
+              <p class="service__desc-description">
+								Соглашение с крупными судоходными линиями
+							</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="service">
+              <div class="service__img hidden-sm-down">
+								<a href=""><div class="img-overlay"></div></a>
+                <img src="images/pic-2.png" alt="">
+              </div>
+              <a href="" class="service__desc-title">Авиаперевозки</a>
+              <p class="service__desc-description">
+								Регулярная отправка грузов по всему миру
+							</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="service">
+              <div class="service__img hidden-sm-down">
+								<a href=""><div class="img-overlay"></div></a>
+                <img src="images/pic-3.png" alt="">
+              </div>
+              <a href="" class="service__desc-title">Автоперевозки</a>
+              <p class="service__desc-description">
+								Осуществление международных грузовых автоперевозок
+							</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3">
+            <div class="service">
+              <div class="service__img hidden-sm-down">
+								<a href=""><div class="img-overlay"></div></a>
+                <img src="images/pic-4.png" alt="">
+              </div>
+              <a href="" class="service__desc-title">Таможенное оформление</a>
+              <p class="service__desc-description">
+								Полный комплекс услуг таможенной очистки
+							</p>
+            </div>
+          </div>
+					<div class="col-12 col-md-6 col-xl-3">
+            <div class="service">
+              <div class="service__img hidden-sm-down">
+								<a href=""><div class="img-overlay"></div></a>
+                <img src="images/pic-5.png" alt="">
+              </div>
+              <a href="" class="service__desc-title">Сборные грузы</a>
+              <p class="service__desc-description">
+								Регулярный трафик из Китая, Турции и Европы
+							</p>
+            </div>
+          </div>
+					<div class="col-12 col-md-6 col-xl-3">
+            <div class="service">
+              <div class="service__img hidden-sm-down">
+								<a href=""><div class="img-overlay"></div></a>
+                <img src="images/pic-6.png" alt="">
+              </div>
+              <a href="" class="service__desc-title">Контейнерные перевозки</a>
+              <p class="service__desc-description">
+								Доставка генеральных грузов
+							</p>
+            </div>
+          </div>
+					<div class="col-12 col-md-6 col-xl-3">
+            <div class="service">
+              <div class="service__img hidden-sm-down">
+								<a href=""><div class="img-overlay"></div></a>
+                <img src="images/pic-7.png" alt="">
+              </div>
+              <a href="" class="service__desc-title">Аутсорсинг ВЭД</a>
+              <p class="service__desc-description">
+								Комплексное ведение внешнеэкономической деятельности
+							</p>
+            </div>
+          </div>
+					<div class="col-12 col-md-6 col-xl-3">
+            <div class="service">
+              <div class="service__img hidden-sm-down">
+								<a href=""><div class="img-overlay"></div></a>
+                <img src="images/pic-8.png" alt="">
+              </div>
+              <a href="" class="service__desc-title">Страхование и сертификация</a>
+              <p class="service__desc-description">
+								Сохранность и лицензирование груза на всех этапах
+							</p>
+            </div>
+          </div>
+				</div>
+			</div>
+		</section>
+
+	<section class="write-us">
+		<div class="container">
+			<h2>Напишите нам</h2>
+			<div class="row">
+				<div class="col-12 col-xl-6">
+					<form class="application__form" action="php/post.php" method="post">
+						<div class="row write-us__inputs">
+							<div class="col-12 col-sm-6">
+								<input name="name" type="text" class="name-input" placeholder="Имя*">
+							</div>
+							<div class="col-12 col-sm-6">
+								<input name="email" type="text" class="email-input" placeholder="Email*">
+							</div>
+							<div class="col-12 col-sm-6">
+								<input name="from" type="text" placeholder="Откуда">
+							</div>
+							<div class="col-12 col-sm-6">
+								<input name="destination" type="text" placeholder="Куда">
+							</div>
+						</div>
+						<textarea name="message" placeholder="Сообщение*"></textarea>
+					<input type="hidden" name="location" value="Блок напишите нам">
+					<button class="but-yellow" type="submit">Отправить</button>
+					</form>
+				</div>
+				<div class="col-12 col-xl-6">
+					<p class="write-us__about">
+						КаргоЭкспертСистем доставит Ваш груз из любого уголка мира!
+						От выбора транспортировки груза зависит стоимость ставки на
+						перевозку, поэтому мы учитываем все пожелания и требования заказчика,
+						с учетом временных сроков грузоперевозок. Высокое качество
+						предоставляемых услуг – это результат постоянного развития
+						в качественном направлении, расширения дополнительных услуг.
+						КаргоЭкспертСистем доставит Ваш груз из любого уголка мира!
+						От выбора транспортировки груза зависит стоимость ставки на
+						перевозку, поэтому мы учитываем все пожелания и требования
+						заказчика, с учетом временных сроков грузоперевозок.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="scheme">
+		<div class="container">
+			<h2>География перевозок</h2>
+			<div class="row">
+				<div class="col-12 col-xl-6">
+					<p class="scheme__head">Популярные маршруты и сроки перевозки грузов:</p>
+					<div class="row scheme__ways">
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Санкт-Петербург - Москва</p>
+								<p>(срок 2 дня)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Джакарта - СПб</p>
+								<p>(срок 27-32 дня)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Кобе - СПб</p>
+								<p>(срок 35-45 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Нава-Шева - СПб</p>
+								<p>(срок 20-25 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Токио - СПб</p>
+								<p>(срок 35-45 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Нью-Йорк - СПб</p>
+								<p>(срок 18-22 дня)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Нагоя - СПб</p>
+								<p>(срок 35-45 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Хьюстон - СПб</p>
+								<p>(срок 23-28 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Бусан - СПб</p>
+								<p>(срок 40-45 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Стамбул - СПб</p>
+								<p>(срок 15-19 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Циндао - СПб</p>
+								<p>(срок 35-45 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Монреаль - СПб</p>
+								<p>(срок 14-18 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Шанхай - СПб</p>
+								<p>(срок 35-40 дней)</p>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-3 col-xl-6">
+							<div class="scheme__ways-item">
+								<p>Специя - СПб</p>
+								<p>(срок 13-17 дней)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-xl-6">
+					<img class="scheme__map-img" src="images/pic-map.png" alt="">
+					<p class="scheme__map-text">
+						КаргоЭкспертСистем предоставляет самые востребованные виды
+						услуг – услуги грузоперевозки. Мы понимаем, что современные
+						реалии жизни не позволяют десяткам тысяч частных фирм и
+						государственных предприятий рационально функционировать
+						без своевременного осуществления доставки груза.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="call-us">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-xl-8 call-us-text">
+					<p>
+						У Вас редкое направление? Позвоните нам и мы Вам поможем!
+					</p>
+				</div>
+				<div class="col-12 col-xl-4 call-us-buts">
+					<a class="all-modal-but modal-but but-yellow hidden-sm-down" data-target="#modal-callback" data-toggle="modal" href="">
+	          Обратный звонок
+	        </a>
+					<a class="but-yellow hidden-md-up" href="tel:88001002883">Позвоните нам</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="partners">
+		<div class="container">
+			<div class="row partners__logos">
+				<div class="col-6 col-xl-2"><a href=""><img src="images/part-logo.png" alt=""></a></div>
+				<div class="col-6 col-xl-2"><a href=""><img src="images/part-logo.png" alt=""></a></div>
+				<div class="col-6 col-xl-2"><a href=""><img src="images/part-logo.png" alt=""></a></div>
+				<div class="col-6 col-xl-2"><a href=""><img src="images/part-logo.png" alt=""></a></div>
+				<div class="col-6 col-xl-2"><a href=""><img src="images/part-logo.png" alt=""></a></div>
+				<div class="col-6 col-xl-2"><a href=""><img src="images/part-logo.png" alt=""></a></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="advantages">
+		<div class="container advantages__cont">
+			<div class="row">
+				<div class="col-12 col-xl-7 advantages__whywe">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<h2>Почему мы?</h2>
+								<div class="row">
+									<div class="col-6 col-lg-3 col-xl-6 advantages__whywe--item">
+										Грузоперевозки любой сложности
+									</div>
+									<div class="col-6 col-lg-3 col-xl-6 advantages__whywe--item">
+										Организация доставки без посредников
+									</div>
+									<div class="col-6 col-lg-3 col-xl-6 advantages__whywe--item">
+										Подбор оптимальных маршрутов
+									</div>
+									<div class="col-6 col-lg-3 col-xl-6 advantages__whywe--item">
+										Документальное сопровождение
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-xl-5 advantages__writeus">
+					<h2>Напишите нам</h2>
+					<form class="application__form" action="php/post.php" method="post">
+						<div class="row advantages__write-us__inputs">
+							<div class="col-12 col-sm-6 col-xl-12">
+								<input name="name" type="text" class="name-input" placeholder="Имя*">
+							</div>
+							<div class="col-12 col-sm-6 col-xl-12">
+								<input name="email" type="text" class="email-input" placeholder="Email*">
+							</div>
+						</div>
+						<textarea name="message" placeholder="Сообщение*"></textarea>
+					<input type="hidden" name="location" value="Блок почему мы/напишите нам">
+					<button class="but-yellow" type="submit">Отправить</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
 
-
-	<!-- ТАРИФЫ -->
-		<section class="akc" id="akc">
-			<div class="container">
-				<div class="row">
-					<h2 class="akc__title">Наши услуги</h2>
-					<p class="akc__description description">
-
-					</p>
-					<div class="col-xs-4 akc__box">
-						<div class="akc__block">
+	<section class="faq">
+		<div class="container">
+			<h2>Вопрос-ответ</h2>
+			<div class="row">
+				<div class="col-12 col-xl-6">
+					<div class="faq__collapse-block">
+						<span class="collapse-link">Как получить информацию по грузу</span>
+	          <div class="collapse-content">
 							<p>
-
+								Обеспечение сохранности товара во время транспортировки является
+								главной задачей грузоперевозчика. «Карго Эксперт Систем» располагает
+								новейшим парком транспортных средств, что минимизирует возможные риски,
+								связанные с перевозкой товаров первоначальном виде.
 							</p>
 						</div>
 					</div>
-					<div class="col-xs-4 akc__box">
-						<div class="akc__block">
+					<div class="faq__collapse-block">
+						<span class="collapse-link">Как получить информацию по грузу</span>
+	          <div class="collapse-content">
 							<p>
-
+								Обеспечение сохранности товара во время транспортировки является
+								главной задачей грузоперевозчика. «Карго Эксперт Систем» располагает
+								новейшим парком транспортных средств, что минимизирует возможные риски,
+								связанные с перевозкой товаров первоначальном виде.
 							</p>
 						</div>
 					</div>
-					<div class="col-xs-4 akc__box">
-						<div class="akc__block">
+					<div class="faq__collapse-block">
+						<span class="collapse-link">Как получить информацию по грузу</span>
+	          <div class="collapse-content">
 							<p>
-
+								Обеспечение сохранности товара во время транспортировки является
+								главной задачей грузоперевозчика. «Карго Эксперт Систем» располагает
+								новейшим парком транспортных средств, что минимизирует возможные риски,
+								связанные с перевозкой товаров первоначальном виде.
 							</p>
 						</div>
 					</div>
-
 				</div>
-			</div>
-		</section>
-
-	<!-- СХЕМА РАБОТЫ -->
-		<section class="scheme" id="scheme">
-			<div class="container">
-				<div class="row">
-					<h2>Схема работы</h2>
-					<p class="scheme__description description">
-						Как мы работаем
-					</p>
-
-					<div class="col-sm-3 col-xs-6 scheme__box">
-						<div class="scheme__block">
-
+				<div class="col-12 col-xl-6">
+					<div class="faq__collapse-block">
+						<span class="collapse-link">Как получить информацию по грузу</span>
+	          <div class="collapse-content">
+							<p>
+								Обеспечение сохранности товара во время транспортировки является
+								главной задачей грузоперевозчика. «Карго Эксперт Систем» располагает
+								новейшим парком транспортных средств, что минимизирует возможные риски,
+								связанные с перевозкой товаров первоначальном виде.
+							</p>
 						</div>
-						<p>
-
-						</p>
 					</div>
-
-					<div class="col-sm-3 col-xs-6 scheme__box">
-						<div class="scheme__block">
-
+					<div class="faq__collapse-block">
+						<span class="collapse-link">Как получить информацию по грузу</span>
+	          <div class="collapse-content">
+							<p>
+								Обеспечение сохранности товара во время транспортировки является
+								главной задачей грузоперевозчика. «Карго Эксперт Систем» располагает
+								новейшим парком транспортных средств, что минимизирует возможные риски,
+								связанные с перевозкой товаров первоначальном виде.
+							</p>
 						</div>
-						<p>
-
-						</p>
 					</div>
-
-				</div>
-			</div>
-		</section>
-
- <!-- ПРЕИМУЩЕСТВА -->
-	<section class="advantages" id="advantages">
-		<div class="container">
-			<div class="row">
-				<h2 class="advantages__title">Наши приемущества</h2>
-				<p class="advantages__description description">
-
-				</p>
-				<div class="col-sm-3 col-xs-6 advantages__box">
-					<div class="advantages__block">
-						<p>
-
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3 col-xs-6 advantages__box">
-					<div class="advantages__block">
-						<p>
-
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3 col-xs-6 advantages__box">
-					<div class="advantages__block">
-						<p>
-
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3 col-xs-6 advantages__box">
-					<div class="advantages__block">
-						<p>
-
-						</p>
+					<div class="faq__collapse-block">
+						<span class="collapse-link">Как получить информацию по грузу</span>
+	          <div class="collapse-content">
+							<p>
+								Обеспечение сохранности товара во время транспортировки является
+								главной задачей грузоперевозчика. «Карго Эксперт Систем» располагает
+								новейшим парком транспортных средств, что минимизирует возможные риски,
+								связанные с перевозкой товаров первоначальном виде.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-
-<!-- ТАРИФЫ -->
-	<section class="services" id="services">
-		<div class="container">
-			<div class="row">
-				<h2 class="advantages__title">Наши услуги</h2>
-				<p class="advantages__description description">
-
-				</p>
-				<div class="col-sm-3 col-xs-6 services__box">
-					<div class="services__block">
-						<p>
-
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3 col-xs-6 services__box">
-					<div class="services__block">
-						<p>
-
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3 col-xs-6 services__box">
-					<div class="services__block">
-						<p>
-
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3 col-xs-6 services__box">
-					<div class="services__block">
-						<p>
-
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-<!-- НАШИ РАБОТЫ -->
-	<section class="goods" id="goods">
-		<div class="container">
-			<div class="row">
-				<h2>Товарная номенклатура</h2>
-				<p class="goods__description description">
-
-				</p>
-
-				<div class="col-sm-3 col-xs-6 goods__box">
-					<div class="goods__block">
-
-					</div>
-					<p>
-
-					</p>
-				</div>
-
-			</div>
-		</div>
-	</section>
-
-
-
-	<!-- КОНТАКТЫ -->
-
-	<section class="contacts" id="contacts">
-		<div class="container">
-			<div class="row">
-				<h2>Контакты</h2>
-				<p class="description contacts__description">Мы находимся:</p>
-				<div class="col-md-12">
-					<div class="contacts__map">
-
-					</div>
-					<div class="contacts__block">
-						<p class="contacts__phone">
-							8 800 666 66 66<br>
-							8 000 777 77 77
-						</p>
-						<p class="contacts__email">
-							<a href="mailto:info@mail.ru">info@mail.ru</a>
-						</p>
-						<p class="contacts__adress">
-							123
-						</p>
-					</div>
-			</div>
-		</div>
-	</section>
-
-
-
-
-<!-- ФИНАЛЬНАЯ ЗАЯВКА -->
-
-<section class="application" id="application">
-		<div class="container">
-			<div class="row">
-				<h2>Оставьте заявку</h2>
-				<p class="application__description description">
-					Мы свяжемся с вами в ближайшее время
-				</p>
-
-				<form class="application__form" action="php/post.php" method="post">
-				<div class="col-xs-12">
-					<input name="name" type="text" class="name-input" placeholder="Имя*">
-					<input name="surname"type="text" class="surname-input" placeholder="Фамилия*">
-					<input name="phone" type="text" class="phone-input" placeholder="Телефон*">
-					<input name="from" type="text" placeholder="Откуда">
-					<input name="destination" type="text" placeholder="Куда">
-					<input name="weight" type="text" placeholder="Масса груза">
-					<input name="volume" type="text" placeholder="Объем груза">
-					<textarea name="message" cols="30" rows="10" placeholder="Сообщение"></textarea>
-				</div>
-				<input type="hidden" name="location" value="Форма заявки">
-				<button class="application__button button" type="submit">Отправить</button>
-				</form>
-			</div>
-		</div>
-</section>
-
-
-
-<!-- ФУТЕР -->
 //= template/footer.html

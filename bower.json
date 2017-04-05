@@ -19,6 +19,7 @@
     "bootstrap": "^4.0.0",
     "slick-carousel": "slick.js#^1.6.0",
     "jquery-colorbox": "colorbox#^1.6.4",
-    "jquery.maskedinput": "jquery-maskedinput#^1.4.1"
+    "jquery.maskedinput": "jquery-maskedinput#^1.4.1",
+    "jquery.scroolly": "^0.0.1"
   }
 }
