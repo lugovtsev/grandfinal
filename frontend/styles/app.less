@@ -394,6 +394,9 @@ header {
       justify-content: space-between;
       margin: 0;
       padding: 0;
+      & > li.active > a {
+        color: @btn-bg;
+      }
       @media (max-width: 1199px) {
         li.sub-menu {
           position: relative;
@@ -514,8 +517,8 @@ header {
 
 /* PROMO */
 section.promo {
-  background: @blue url("../images/img-bg.jpg") no-repeat;
-  background-size: cover;
+  background-color: @blue;
+  background-size: cover !important;
   text-align: center;
   padding: 60px 0 50px;
   @media @desktop {
@@ -780,9 +783,12 @@ section.partners {
     padding: 100px 0;
   }
 
-  .partners__logos > div {
-    text-align: center;
-    margin-bottom: 10px;
+  .partners__logos {
+    justify-content: center;
+    & > div {
+      text-align: center;
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -1012,10 +1018,10 @@ footer {
           top: 3px;
           left: 0;
         }
-        &:nth-of-type(1)::before {
+        &:nth-of-type(1)::before, &:nth-of-type(2)::before {
           background-image: url("../images/icon-map.png");
         }
-        &:nth-of-type(2)::before {
+        &:nth-of-type(3)::before {
           background-image: url("../images/icon-phone-2.png");
         }
       }
@@ -1395,6 +1401,14 @@ section.serv-page {
         padding: 5px 0;
       }
     }
+    li.current {
+      &::before {
+        color: #000;
+      }
+      a {
+        font-weight: @fwb;
+      }
+    }
   }
   .sidebar {
     position: relative;
@@ -1457,7 +1471,7 @@ section.serv-page {
       opacity: 1;
       visibility: visible;
       transition-duration: 1s;
-      & > div:nth-last-of-type(1) {
+      & > div {
         margin-bottom: 20px;
       }
     }
@@ -1544,6 +1558,7 @@ section.serv-page {
     }
     .serv-advert {
       background-size: cover;
+      background-color: @blue;
       margin: 10px 0 0;
       padding: 40px 0;
       @media @desktop {
@@ -1796,17 +1811,20 @@ section.serv-page {
 
 /*стили для ошибки валидации*/
 
-input[type=text].fill-error {
+input[type=text].fill-error,
+textarea.fill-error {
   border: 1px solid @yellow !important;
-  max-height: 50px;
+  //max-height: 50px;
 }
 
-input[type=text].fill-error::-moz-placeholder {
+input[type=text].fill-error::-moz-placeholder,
+textarea.fill-error::-moz-placeholder {
   color: @yellow !important;
   max-height: 50px;
 }
 
-input[type=text].fill-error::-webkit-input-placeholder {
+input[type=text].fill-error::-webkit-input-placeholder,
+textarea.fill-error::-webkit-input-placeholder {
   color: @yellow !important;
   max-height: 50px;
 }

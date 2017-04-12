@@ -130,3 +130,10 @@ gulp.task('prod', gulp.series(
   'all_clean','prepare_appcss_prod',
   gulp.parallel('html','styles','img', 'scripts_prod', 'movesrc'), 'serve')
 );
+
+
+gulp.task('js', function() {
+  return gulp.src('frontend/scripts/main.js')
+      .pipe(rigger())
+      .pipe(gulp.dest('public/js'));
+});

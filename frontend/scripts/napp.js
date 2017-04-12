@@ -81,6 +81,7 @@ $('#add_file').click(function(){
 })
 
 $("#attached_file").change(function(){
+	console.log('added file')
 	if (this.value != "")
   	$('#add_file').text(this.value.replace(/C:\\fakepath\\/i, ''));
 	else {
@@ -131,61 +132,144 @@ $('#main-menu a').click(function(e)
 	  slidesToScroll: 2
 	});*/
 
+	$('#fb_btn, #vk_btn, #tw_btn, #gpl_btn').click(function(){
+		window.open($(this).attr("href"),'displayWindow', 'width=700,height=400,left=200,top=100,location=no, directories=no,status=no,toolbar=no,menubar=no');
+		return false;
+ });
+
 /*валидация формы*/
 	$("form").submit(function() {
 		var checkError = false; //проверка прохождения валидации
-		//var regExpMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$/;
-		//var email = $(this).find('.email-input');
+		var regExpMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$/;
+		var email = $(this).find('.email-input');
 		var regExpName = /[^а-яЁё\s]/i;
 		var name = $(this).find('.name-input');
 		var phone = $(this).find('.phone-input');
+		var message = $(this).find('textarea');
 
 		//не заполнено имя
-		if (name.val()=="")
+		if (name.val() != undefined)
+		{
+			if (name.val()=="")
+				{
+					name.addClass("fill-error");
+					name.attr("placeholder","*Заполните имя");
+					checkError = true;
+				}
+			else if (regExpName.test(name.val())) //неверный формат имени
+						{
+							name.addClass("fill-error");
+							name.attr("placeholder","Неверный формат имени");
+							name.val("");
+							checkError = true;
+						}
+			else
 			{
-				name.addClass("fill-error");
-				name.attr("placeholder","*Заполните поле");
-				checkError = true;
+				name.removeClass("fill-error");
+				name.attr("placeholder","Имя*");
 			}
-		else if (regExpName.test(name.val())) //неверный формат имени
-					{
-						name.addClass("fill-error");
-						name.attr("placeholder","Неверный формат имени");
-						name.val("");
+		}
+
+		//неверный формат email
+		if (email.val() != undefined)
+		{
+			if (email.val()=="")
+				{
+					email.addClass("fill-error");
+					email.attr("placeholder","*Заполните email");
+					checkError = true;
+				}
+			else if (!regExpMail.test(email.val()))
+				{
+					email.addClass("fill-error");
+					email.attr("placeholder","Неверный формат e-mail");
+					email.val("");
+					checkError = true;
+				}
+			else
+				{
+					email.removeClass("fill-error");
+					email.attr("placeholder","Email*");
+				}
+			}
+
+		// если форма онлайн-расчета
+		if ($(this).hasClass('calc_form')) {
+			var from = $(this).find('.from-input');
+			var destination = $(this).find('.destination-input');
+			var item_name = $(this).find('.item_name-input');
+			var weight = $(this).find('.weight-input');
+			if (phone.val() != undefined)
+			{
+				//город отправки
+				if (from.val()=="") {
+						from.addClass("fill-error").attr("placeholder","*Заполните город отправки");
 						checkError = true;
 					}
-		else
-		{
-			name.removeClass("fill-error");
-			name.attr("placeholder","Имя*");
+				else {
+						from.removeClass("fill-error").attr("placeholder","Страна, город отправки*");
+					}
+				//город доставки
+				if (destination.val()=="") {
+							destination.addClass("fill-error").attr("placeholder","*Заполните город доставки");
+							checkError = true;
+						}
+				else {
+						destination.removeClass("fill-error").attr("placeholder","Страна, город доставки*");
+					}
+				//название груза
+				if (item_name.val()=="") {
+							item_name.addClass("fill-error").attr("placeholder","*Заполните наименование товара");
+							checkError = true;
+						}
+				else {
+						item_name.removeClass("fill-error").attr("placeholder","Наименование товара*");
+					}
+				//название груза
+				if (weight.val()=="") {
+							weight.addClass("fill-error").attr("placeholder","*Заполните вес");
+							checkError = true;
+						}
+				else {
+						weight.removeClass("fill-error").attr("placeholder","Вес нетто/брутто, кг*");
+					}
+				}
+		} // конец if формы онлайн-расчета
+		else {
+			//не заполнен телефон
+			if (phone.val() != undefined)
+			{
+				if (phone.val()=="")
+					{
+						phone.addClass("fill-error");
+						phone.attr("placeholder","*Заполните телефон");
+						checkError = true;
+					}
+				else
+					{
+						phone.removeClass("fill-error");
+						phone.attr("placeholder","Телефон*");
+					}
+				}
 
-		}
-		//не заполнен телефон
-		if (phone.val()=="")
-			{
-				phone.addClass("fill-error");
-				phone.attr("placeholder","*Заполните поле");
-				checkError = true;
+				//не заполнено сообщение
+				if (message.val() != undefined)
+				{
+					if (message.val()=="")
+						{
+							message.addClass("fill-error");
+							message.attr("placeholder","*Заполните поле");
+							checkError = true;
+						}
+					else
+						{
+							message.removeClass("fill-error");
+							message.attr("placeholder","Телефон*");
+						}
+					}
 			}
-		else
-			{
-				phone.removeClass("fill-error");
-				phone.attr("placeholder","Телефон*");
-			}
-		//неверный формат email
-		/*
-		if (!regExpMail.test(email.val()) && email.val()!="")
-			{
-				email.addClass("fill-error");
-				email.attr("placeholder","Неверный формат e-mail");
-				email.val("");
-				checkError = true;
-			}
-		else
-			{
-				email.removeClass("fill-error");
-				email.attr("placeholder","Email");
-			}*/
+
+
 		if (checkError) return false; //отменить отправку формы, если валидация не пройдена
 	});
 

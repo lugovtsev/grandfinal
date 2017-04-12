@@ -12,7 +12,7 @@
           <div class="breadcrumbs"><a href="/">Главная</a>&nbsp;&nbsp;›&nbsp;&nbsp;Online-расчет</div>
           <h1>РАСЧЕТ СТОИМОСТИ ДОСТАВКИ</h1>
           <h2>Для расчета стоимости доставки груза заполните форму ниже и/или прикрепите упаковочный лист (необязательно).</h2>
-          <form class="application__form" action="php/post.php" method="post">
+          <form enctype="multipart/form-data" class="application__form calc_form" action="php/post.php" method="post">
             <h3>Маршрут</h3>
             <div class="row calc__form-inputs">
               <div class="col-12 col-sm-6">
@@ -65,7 +65,7 @@
               </div>
             </div>
 
-          <input type="hidden" name="location" value="Блок напишите нам">
+          <input type="hidden" name="location" value="Онлайн-расчет">
           <button class="but-yellow" type="submit">Отправить cообщение</button>
           </form>
         </div>
