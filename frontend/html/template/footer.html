@@ -1,66 +1,21 @@
-<footer>
-  <section class="footer__row1 hidden-lg-down">
-    <div class="container">
-      <div class="row">
-        <div class="col-3 contact__data1">
-          <h3>Контактная информация</h3>
-          <p>Москва Рязанский пр-т д.16 стр.4 офис 34.</p>
-          <p>+7 495 777 28 83<br>8 800 100 28 83 <span>беспл. по РФ</span></p>
-        </div>
-        <div class="col-3 contact__data2">
-          <p>ПН - ПТ 10:00 - 19:00</p>
-          <p>info@cargoes.biz</p>
-        </div>
-        <div class="col-3">
-          <h3>Навигация</h3>
-          <nav>
-            <ul>
-              <li><a href="#">Услуги</a></li>
-              <li><a href="#">Перевозимые грузы</a></li>
-              <li><a href="#">Online-расчет</a></li>
-              <li><a href="#">О компании</a></li>
-              <li><a href="#">Контакты</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-3">
-          <h3>Мы в социальных сетях</h3>
-          <div class="social__group">
-            <a href="vk"><img src="images/icon-vk.png" alt=""></a>
-            <a href="f"><img src="images/icon-f.png" alt=""></a>
-            <a href="tw"><img src="images/icon-tw.png" alt=""></a>
-          </div>
-          <a class="all-modal-but modal-but but-yellow" data-target="#modal-callback" data-toggle="modal" href="">
-	          Online-заявка
-	        </a>
-        </div>
-      </div>
-    </div>
-  </section>
-    <div class="container-fluid">
-      <div class="row footer_row2">
-        <div class="col-12 col-xl-6">&copy; Cargo Expert System 2014</div>
-        <div class="col-12 col-xl-6 hidden-lg-down">Сделано в&nbsp;<a href="http://t-stark.ru" target="_blank" rel="nofollow">T-Stark</a></div>
-      </div>
-    </div>
-</footer>
+
 
 	<!--Начало формы для отправки заявки -->
-	<div class="modal fade" id="modal-callback" tabindex="-1" role="dialog">
+	<div class="modal fade" id="modal-realcallback" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
 		  <div class="modal-content">
 		    <div class="modal-header">
-					<h3>Закажите звонок</h3>
-					<p>Оставьте свой номер телефона и мы вам перезвоним</p>
+					<h3>Закажите обратный звонок!</h3>
+					<p>Мы свяжимся с Вами в ближайшее время!</p>
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 		    </div>
 		    <div class="modal-body">
 					<form action="php/post.php" method="post">
-						<input name="name" class="modal-input name-input" type="text" placeholder="Имя*">
-						<input name="phone" class="modal-input phone-input" type="text" placeholder="Телефон*">
+						<input name="name" class="modal-input name-input" type="text" placeholder="ИМЯ*">
+						<input name="phone" class="modal-input phone-input" type="text" placeholder="ТЕЛЕФОН*">
 						<input name="surname" type="text" class="surname-input" placeholder="Фамилия*">
-						<input type="hidden" name="location" value="Модальное окно">
-						<button type="submit" class="button modal-submit but-yellow">
+						<input type="hidden" name="location" value="Обратный звонок">
+						<button type="submit" class="button modal-submit base-but">
 						Отправить
 						</button>
 					</form>
@@ -69,8 +24,32 @@
 		</div>
 	</div>
 	<!--Конец формы для отправки заявки -->
+	<!--Начало формы записи на курс -->
+	<div class="modal fade" id="modal-callback" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+		    <div class="modal-header">
+					<h3>Оставьте заявку, чтобы записаться на курс</h3>
+					<p>Мы свяжимся с Вами в ближайшее время!</p>
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+		    </div>
+		    <div class="modal-body">
+					<form action="php/post.php" method="post">
+						<input name="name" class="modal-input name-input" type="text" placeholder="ИМЯ*">
+						<input name="email" class="modal-input email-input" type="text" placeholder="EMAIL*">
+						<input name="surname" type="text" class="surname-input" placeholder="Фамилия*">
+						<input type="hidden" name="location" value="Запись на курс">
+						<button type="submit" class="button modal-submit base-but">
+						Отправить
+						</button>
+					</form>
+			  </div>
+		  </div>
+		</div>
+	</div>
+	<!--Конец формы записи на курс -->
 
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/napp.js"></script>
+	<script type="text/javascript" src="js/myApp.js"></script>
 </body>
 </html>
